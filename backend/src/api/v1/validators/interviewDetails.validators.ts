@@ -7,10 +7,10 @@ const interviewDetailsSchema = {
     status: { type: 'string', enum: ['Completed', 'In Progress'] },
     feedback: { type: 'string' },
     rating: { type: 'number' },
-    interviewId: { type: 'string' },
+    interviewId: { type: 'string' }
   },
   required: ['name', 'status', 'feedback', 'rating', 'interviewId'],
-  additionalProperties: false,
+  additionalProperties: false
 }
 
 const interviewDetailsValidator = new BaseValidator(interviewDetailsSchema)

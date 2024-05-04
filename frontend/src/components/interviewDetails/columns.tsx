@@ -24,8 +24,8 @@ export const columns: ColumnDef<InterviewDetailsDTO>[] = [
         aria-label="Select row"
       />
     ),
-    enableSorting: false,
-    enableHiding: false,
+    enableSorting: true,
+    enableHiding: true,
   },
   {
     accessorKey: "name",
@@ -49,9 +49,18 @@ export const columns: ColumnDef<InterviewDetailsDTO>[] = [
   {
     accessorKey: "rating",
     header: "Rating",
-    cell: ({ row }) => <ReactStars count={row.getValue('rating')} size={24} color2={"#ffd700"} />,
+    cell: ({ row }) => (
+      <ReactStars
+        count={5}
+        size={24}
+        value={row.getValue("rating")}
+        color2={"#ffd700"}
+        edit={false}
+      />
+    ),
   },
   {
+    accessorKey: "Row Actions",
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {

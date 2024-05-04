@@ -33,6 +33,7 @@ export const columns: ColumnDef<InterviewDTO>[] = [
   },
 
   {
+    accessorKey: "Row Actions",
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {

@@ -26,7 +26,7 @@ export const validateToken = (
         } else {
           const id: string = decoded?.id
           const user: Promise<UserDTO | null> = userCRUD.find({
-            _id: id,
+            _id: id
           })
 
           user

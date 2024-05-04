@@ -6,7 +6,7 @@ import { validateToken } from '../middleware'
 const apiRouter = Router()
 
 apiRouter.use('/auth', authRouter)
-apiRouter.use('/interview',validateToken,interviewRouter)
-apiRouter.use('/interviewDetails',validateToken,interviewDetailsRouter)
+apiRouter.use('/interview', validateToken, interviewRouter)
+apiRouter.use('/interviewDetails', validateToken, interviewDetailsRouter)
 
 export default apiRouter

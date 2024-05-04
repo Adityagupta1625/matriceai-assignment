@@ -3,7 +3,7 @@ import { InterviewDetailsModel } from '../models'
 import { type InterviewDetailsDTO } from '../types'
 
 class InterviewDetailsCRUD extends CRUDBase<InterviewDetailsDTO> {
-  constructor() {
+  constructor () {
     super(InterviewDetailsModel)
   }
 }

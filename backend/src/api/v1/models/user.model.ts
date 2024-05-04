@@ -4,7 +4,7 @@ import { type UserDTO } from '../types'
 const UserSchema = new Schema<UserDTO>(
   {
     username: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
+    password: { type: String, required: true }
   },
   { timestamps: true }
 )

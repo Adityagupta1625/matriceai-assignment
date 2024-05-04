@@ -10,7 +10,7 @@ import { FormType } from "@/constants/enum";
 import { addInterviewDetails } from "@/lib/InterviewDetails/add";
 import { updateInterviewDetails } from "@/lib/InterviewDetails/update";
 import { InterviewDetailsDTO } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Enum from "@/constants/enum";
@@ -32,7 +32,6 @@ export function InterviewDetailsForm(props: InterviewDetailsProps) {
   const [name, setName] = useState<string>(props.data.name);
   const [status, setStatus] = useState<string>(props.data.status);
   const [rating, setRating] = useState<number>(props.data.rating);
-  // const [interviewId,setInterviewId]=useState<string>(props.data.interviewId)
   const [feedback, setFeedback] = useState<string>(props.data.feedback);
 
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
@@ -78,7 +77,7 @@ export function InterviewDetailsForm(props: InterviewDetailsProps) {
             Details
           </DialogTitle>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="grid gap-4 py-2">
           <div className="grid grid-cols-4 items-center gap-4">
             <Input
               className="w-96"
@@ -90,8 +89,7 @@ export function InterviewDetailsForm(props: InterviewDetailsProps) {
               }}
             />
           </div>
-        </div>
-        <div className="grid gap-4 py-4">
+
           <div className="grid grid-cols-4 items-center gap-4">
             <Textarea
               className="w-96"
@@ -102,24 +100,23 @@ export function InterviewDetailsForm(props: InterviewDetailsProps) {
               }}
             />
           </div>
-        </div>
-        <div className="grid gap-4 py-4">
+
           <div className="grid grid-cols-4 items-center gap-4">
-            <Select value={status} onValueChange={(e)=>{
-                setStatus(e)
-            }}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Theme" />
+            <Select
+              onValueChange={(e) => {
+                setStatus(e);
+              }}
+            >
+              <SelectTrigger className="w-96 text-black">
+                <SelectValue placeholder={status} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="Completed">Completed</SelectItem>
                 <SelectItem value="Pending">Pending</SelectItem>
-              
               </SelectContent>
             </Select>
           </div>
-        </div>
-        <div className="grid gap-4 py-4">
+
           <div className="grid grid-cols-4 items-center gap-4">
             <Input
               type="number"

@@ -3,7 +3,7 @@ import { interviewCRUD } from '../crud'
 import { type InterviewDTO } from '../types'
 
 class InterviewController extends BaseController<InterviewDTO> {
-  constructor() {
+  constructor () {
     super(interviewCRUD)
   }
 }

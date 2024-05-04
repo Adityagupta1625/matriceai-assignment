@@ -15,11 +15,12 @@ export default function InterviewDetails() {
   const [data, setData] = useState<InterviewDetailsDTO[]>([]);
   const [interviewId, setInterviewId] = useState<string | null>(null);
   const params = useParams<{ id: string }>();
-  setInterviewId(params.id);
 
   useEffect(() => {
-    if (interviewId !== null) {
-      getAllInterviewDetails(interviewId)
+    setInterviewId(params.id);
+    
+    if (params?.id!==undefined && params.id !== null) {
+      getAllInterviewDetails(params.id)
         .then((result) => {
           setData(result);
         })

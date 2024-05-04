@@ -3,10 +3,10 @@ import { BaseValidator } from '../../../utils'
 const interviewSchema = {
   type: 'object',
   properties: {
-    name: { type: 'string' },
+    name: { type: 'string' }
   },
   required: ['name'],
-  additionalProperties: false,
+  additionalProperties: false
 }
 
 const interviewValidator = new BaseValidator(interviewSchema)

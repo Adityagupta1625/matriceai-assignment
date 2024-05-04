@@ -6,11 +6,11 @@ import HttpException from './HttpException'
 export class BaseValidator {
   private readonly schemaObj: Schema
 
-  constructor(schemaObj: Schema) {
+  constructor (schemaObj: Schema) {
     this.schemaObj = schemaObj
   }
 
-  public async validateInput(
+  public async validateInput (
     req: Request,
     res: Response,
     next: NextFunction

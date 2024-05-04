@@ -3,7 +3,7 @@ import { UserModel } from '../models'
 import { type UserDTO } from '../types'
 
 class UserCRUD extends CRUDBase<UserDTO> {
-  constructor() {
+  constructor () {
     super(UserModel)
   }
 }

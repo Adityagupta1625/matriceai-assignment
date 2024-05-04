@@ -10,8 +10,8 @@ const interviewDetailsSchema = new Schema<InterviewDetailsDTO>({
   interviewId: {
     type: Schema.Types.ObjectId,
     required: true,
-    ref: 'Interview',
-  },
+    ref: 'Interview'
+  }
 })
 
 const InterviewDetailsModel = model<InterviewDetailsDTO>(

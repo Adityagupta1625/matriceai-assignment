@@ -5,7 +5,7 @@ import bcrypt, { compareSync } from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
 class AuthController {
-  public async register(req: Request, res: Response): Promise<Response> {
+  public async register (req: Request, res: Response): Promise<Response> {
     try {
       const { username, password } = req.body
       const hashedPassword = bcrypt.hashSync(password, 10)
@@ -16,14 +16,14 @@ class AuthController {
 
       return res.status(200).json({
         message: 'Registered Successfully!!',
-        token,
+        token
       })
     } catch (e) {
       return await errorHandler(res, e)
     }
   }
 
-  public async login(req: Request, res: Response): Promise<Response> {
+  public async login (req: Request, res: Response): Promise<Response> {
     try {
       const { username, password } = req.body
 
@@ -37,14 +37,14 @@ class AuthController {
 
       return res.status(200).json({
         message: 'Login Successfully!!',
-        token,
+        token
       })
     } catch (e) {
       return await errorHandler(e, res)
     }
   }
 
-  public async resetPassword(req: Request, res: Response): Promise<Response> {
+  public async resetPassword (req: Request, res: Response): Promise<Response> {
     try {
       const { username, password } = req.body
       const hashedPassword = bcrypt.hashSync(password, 10)
@@ -52,13 +52,13 @@ class AuthController {
       const user = await userCRUD.find({ username })
       if (user === null) throw new HttpException(404, 'User Does not Exist')
 
-      await userCRUD.update(user._id.toString(), { password: hashedPassword })
+      await userCRUD.update(user._id, { password: hashedPassword })
 
       const token = jwt.sign({ id: user._id }, process.env.SECRET ?? '')
 
       return res.status(200).json({
         message: 'Password Reset Successfully!!',
-        token,
+        token
       })
     } catch (e) {
       return await errorHandler(e, res)
