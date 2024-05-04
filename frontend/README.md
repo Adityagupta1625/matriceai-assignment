@@ -2,17 +2,37 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone https://github.com/Adityagupta1625/SpeerTask.git
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd your-project
+   ```
+
+3. **Install dependencies using Yarn:**
+
+   ```bash
+   yarn
+   ```
+
+4. **Create a `.env` file:**
+
+   Create a `.env` file in the root of your project and add the following:
+
+   ```env
+   NEXT_PUBLIC_API_URL=your-api-url
+   ```
+
+5. **Run the application in development:**
+
+   ```bash
+   yarn dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
