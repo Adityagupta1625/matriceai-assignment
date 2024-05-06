@@ -19,7 +19,7 @@ class AuthController {
         token
       })
     } catch (e) {
-      return await errorHandler(res, e)
+      return await errorHandler(e, res)
     }
   }
 
